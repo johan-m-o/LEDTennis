@@ -43,8 +43,7 @@ To power the whole setup I took a small USB power bank (5V, 2000mAh) and opened 
 
 ![Overview of the "naked" wiring](/images/naked_overview.jpg)  
 ![Closeup of the main controller innards](/images/brain_compartement.jpg)  
-![Closeup of the battery compartement](/images/battery_compartement.jpg) 
-![The boost/charge/control circuit](/images/USB_booster.jpg)  
+![Closeup of the battery compartement](/images/battery_compartement.jpg)  
 ![Closeup of the USB cable and the wires powering the LED strip](/images/USB_power_overview.jpg)  
 
 ### Design
