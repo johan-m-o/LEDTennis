@@ -1,5 +1,5 @@
 /*
-   LED Tennis v1.0
+   LED Tennis v1.1
    Copyright (c) 2022 Johan Oscarsson
    Released under the MIT licence
 
@@ -444,7 +444,7 @@ void loop() {
       drawMenu = false;
       
       if (menuItem == 0) { // Start menu
-        menuDrawFn("LED Tennis v1.0", gameMode[playMode], "P1 - start", "Mode - settings");
+        menuDrawFn("LED Tennis v1.1", gameMode[playMode], "P1 - start", "Mode - settings");
         
       } else if (menuItem == 1) { // Pick play mode
         menuDrawFn("Play mode", gameMode[playMode], "P1 - set", "Menu");
@@ -737,7 +737,7 @@ void loop() {
       ledBright = 1; // Led brigthness variable for fading the light up and down (start at 1 for the count variable)
       ledHue = 160; // Start the LEDs at a blue colour
       ctrlCount = 0; // Count the number of times the loop has run
-      randomDelayMS = randomInt(1000,10000); // Set a delay until the React LED lights up (in ms)
+      randomDelayMS = randomInt(1000,10000); // Set a delay until the React LEDs lights up (in ms)
       markPos = randomInt(0 + (6 - (difficultyP1 - 1)),(NUM_LEDS - 1) - ((NUM_LEDS / 2) / difficultyP1)); // Decide the position of the mark to hit in "Minigolf", based on the player difficulty level
       
       FastLED.clear();
@@ -827,7 +827,12 @@ void loop() {
         if ((!rainbowPulse && (pickPlayer == 1 && bPlayer1Press || pickPlayer == 0 && bPlayer2Press)) || (rainbowPulse && playMode == 1 && (millis() - ledTimerMS > randomDelayMS || (bPlayer1Press || bPlayer2Press))) || (playMode == 3 && digitalRead(bPlayer1) == LOW)) {
           if (playMode == 1 && !rainbowPulse) {
             rainbowPulse = true;
+            
             ledHue = randomInt(0,256); // Start the LEDs at a random colour
+            
+            bPlayer1Press = false; // Reset button detection
+            bPlayer2Press = false;
+            
             ledTimerMS = millis();
           } else {
             stopBeginLoop = true;
@@ -882,9 +887,12 @@ void loop() {
         minigolfPlay = false;
         chargeCharging = 1;
       }
-
-      bPlayer1Press = false;
-      bPlayer2Press = false;
+      
+      // Reset button press detection on non-React game modes
+      if (playMode != 1) {
+        bPlayer1Press = false;
+        bPlayer2Press = false;
+      }
       
       ledTimerMS = millis();
     }

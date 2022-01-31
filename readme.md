@@ -1,4 +1,4 @@
-# LED Tennis v1.0
+# LED Tennis v1.1
 ![Header image](/images/header.jpg)  
 
 ## Background
@@ -70,8 +70,8 @@ There are currently four game modes:
 - Minigolf
 
 ### Tennis
-![Tennis game mode display](/images/screen_tennis.jpg)  
 ![Tennis gameplay gif](/images/tennis.gif)  
+![Tennis game mode display](/images/screen_tennis.jpg)  
 Players send a single LED light back and forth between them, by pushing their respective button when the LED reaches their end of the light strip. Good timing and quick presses are necessary for a successful hit.
 
 The initial speed that the LED travels across the strip is determined by the receiving player’s difficulty level and each successful hit increases this speed. The player difficulty level also determines how large the field is for detecting a button press as a successful hit. Higher difficulty level means there’s a smaller window of opportunity to send the LED back to the opponent.
@@ -81,15 +81,15 @@ On difficulty level 2-5 button inputs will be blocked for 1 second after pressin
 At the end of a round the number of successful hits that were made (including the “serve”) are displayed on the screen.
 
 ### React
-![React game mode display](/images/screen_react.jpg)  
 ![React gameplay gif](/images/react.gif)  
+![React game mode display](/images/screen_react.jpg)  
 At the beginning of this game all LEDs will pulse in a rainbow pattern for 2-8 seconds. When this pulse ends the light strip will turn white and the players then need to press their buttons as quickly as possible. The player that presses first scores the point and their half of the LED strip turns green. If neither of the players press their button within a set time the LED strip turns red and points are deducted. If both players manage to press their buttons at exactly the same time the LED strip turns yellow and no points are awarded or deducted. If any player presses their button too early the round will end and the player will lose a point.
 
 Player difficulty levels and the amount of points a player has accumulated determine how long (or short) the window of opportunity for pressing the button is. Each player can have a different time frame.
 
 ### Tug-O-War
-![Tug-O-War game mode display](/images/screen_tugowar.jpg)  
 ![Tub-O-War gameplay gif](/images/tug-o-war.gif)  
+![Tug-O-War game mode display](/images/screen_tugowar.jpg)  
 When the game is kicked off the whole light strip pulses in red - yellow - green before two white lights turn on in the middle of the strip. The players need to press their buttons as quickly and as many times as they can to “pull” these two lights towards their end of the strip. The two LEDs change colour to green the closer they get to either end.
 
 Player difficulty will affect how many LEDs the two lights will jump every time the player manages to “pull” them towards themselves. Lower difficulty means larger jumps and vice versa.
@@ -97,8 +97,8 @@ Player difficulty will affect how many LEDs the two lights will jump every time 
 At the end of a round the number of clicks each player made is displayed on the screen.
 
 ### Minigolf
-![Minigolf game mode display](/images/screen_minigolf.jpg)  
 ![Minigolf gameplay gif](/images/minigolf.gif)  
+![Minigolf game mode display](/images/screen_minigolf.jpg)  
 This is a single player game where the player needs to charge up a light spot to make it travel different distances along the light strip. Pressing and holding the player 1 button will start a charging indicator that represents the length of the light strip (the end of the charging indicator is shown with a red light). Releasing the button will send the light the corresponding distance along the light strip. If the button is not released before the light is fully charged the light will automatically be released and travel along and all the way to the end of the strip, resulting in a failed attempt.
 
 The goal of this game mode is to hit a randomly selected part (the “golf hole”) of the light strip, represented by one or several green lights. A higher player difficulty level means that there is a smaller number of lights to hit, and vice versa. A high difficulty level also makes it possible for the “golf hole” to be placed at the extreme ends of the light strip.

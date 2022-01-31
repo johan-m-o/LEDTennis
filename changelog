@@ -1,0 +1,12 @@
+LED Tennis Changelog
+
+Copyright (c) 2022 Johan Oscarsson
+Released under the MIT licence
+
+Documentation and code: https://www.github.com/johan-m-o/LEDTennis
+
+v1.1 - 2022-01-31
+- Must have been released v1.0 way too late in the evening and the React game mode was completely broken. Fixed.
+
+v1.0 - 2022-01-24
+- Initial release
