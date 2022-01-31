@@ -35,7 +35,9 @@ Future improvements might include more game modes, but I also have ideas for how
 
 ### Wiring
 ![Schematics sketch](/images/schematics.png)  
-Above you see the schematic I made before starting the build. When working with LED strips like this it can be a good idea to add a capacitor between it and the power supply (to account for any dips in the power supply), but since I’m working off a battery I tested this first and it didn’t work very well. The capacitor would simply take too much of the charge from the battery to be able to power the Arduino, so I left it out of the design.
+Above you see a version of the schematic I made before starting the build (at an earlier stage, the original sketch was uploaded here, but since it wasn't showing the actual setup it has been replaced). The original sketch had player 1 on D13, player 2 on D11 and left button on D3, but since I at one point thought I'd work with external interrupts I needed to use D2 and D3 for the player buttons (since those are the only pins for interrupts on the Nano). Eventually I found I did not need any interrupts, but at this point everything was soldered up already. Of course, any pins can be used as long as you adjust for this in the code.
+
+When working with LED strips like this it can be a good idea to add a capacitor between it and the power supply (to account for any dips in the power supply), but since I’m working off a battery I tested this first and it didn’t work very well. The capacitor would simply take too much of the charge from the battery to be able to power the Arduino, so I left it out of the design.
 
 In the schematic, the components grouped in the lower right (battery, power button, player 2 button, resistor and LED strip) are housed in one of the plastic boxes and the rest in the other. To keep voltage drop to a minimum the LED strip starts by the battery box rather than the box housing the microcontroller.
 
